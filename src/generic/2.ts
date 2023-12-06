@@ -10,13 +10,15 @@ type AllType = {
   color: string;
   weight: number
 }
+type T = Pick<AllType, 'name' | 'color'>;
+type B = Pick<AllType, 'position' | 'weight'>;
 
-function compare (top, bottom): AllType {
+function compare (top: T, bottom: B): AllType {
   return {
-    name: top.name,
-    color: top.color,
-    position: bottom.position,
-    weight: bottom.weight,
+   name: top.name,
+   color: top.color,
+   position: bottom.position,
+   weight: bottom.weight,
   }
 }
 
